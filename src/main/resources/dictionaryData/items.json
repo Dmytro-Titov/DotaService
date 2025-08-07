@@ -1,0 +1,44 @@
+[
+  {
+    "name": "item1",
+    "bonusStrength": 10,
+    "bonusAgility": 0,
+    "bonusIntelligence": 0,
+    "description": "description1"
+  },
+  {
+    "name": "item2",
+    "bonusStrength": 0,
+    "bonusAgility": 10,
+    "bonusIntelligence": 0,
+    "description": "description2"
+  },
+  {
+    "name": "item3",
+    "bonusStrength": 0,
+    "bonusAgility": 0,
+    "bonusIntelligence": 10,
+    "description": "description3"
+  },
+  {
+    "name": "item4",
+    "bonusStrength": 20,
+    "bonusAgility": 0,
+    "bonusIntelligence": 0,
+    "description": "description4"
+  },
+  {
+    "name": "item5",
+    "bonusStrength": 0,
+    "bonusAgility": 20,
+    "bonusIntelligence": 0,
+    "description": "description5"
+  },
+  {
+    "name": "item6",
+    "bonusStrength": 0,
+    "bonusAgility": 0,
+    "bonusIntelligence": 20,
+    "description": "description6"
+  }
+]

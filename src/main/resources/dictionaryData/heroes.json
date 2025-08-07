@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Hero1",
+    "mainAttribute": "STRENGTH",
+    "baseMana": 100,
+    "baseHealth": 100,
+    "ultimateAbilityName": "Ability1"
+  },
+  {
+    "name": "Hero2",
+    "mainAttribute": "AGILITY",
+    "baseMana": 200,
+    "baseHealth": 200,
+    "ultimateAbilityName": "Ability2"
+  },
+  {
+    "name": "Hero3",
+    "mainAttribute": "INTELLIGENCE",
+    "baseMana": 300,
+    "baseHealth": 300,
+    "ultimateAbilityName": "Ability3"
+  },
+  {
+    "name": "Hero4",
+    "mainAttribute": "STRENGTH",
+    "baseMana": 400,
+    "baseHealth": 400,
+    "ultimateAbilityName": "Ability4"
+  },
+  {
+    "name": "Hero5",
+    "mainAttribute": "AGILITY",
+    "baseMana": 500,
+    "baseHealth": 500,
+    "ultimateAbilityName": "Ability5"
+  },
+  {
+    "name": "Hero6",
+    "mainAttribute": "INTELLIGENCE",
+    "baseMana": 600,
+    "baseHealth": 600,
+    "ultimateAbilityName": "Ability6"
+  }
+]

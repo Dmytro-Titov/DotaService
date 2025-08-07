@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+       http://www.liquibase.org/xml/ns/dbchangelog
+       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet id="1" author="dmytro">
+    <createTable tableName="heros">
+      <column name="id" type="BIGINT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="main_attribute" type="VARCHAR(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="base_mana" type="INT"/>
+      <column name="base_health" type="INT"/>
+      <column name="ultimate_ability_name" type="VARCHAR(255)"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="2" author="dmytro">
+    <createTable tableName="items">
+      <column name="id" type="BIGINT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="bonus_strength" type="INT"/>
+      <column name="bonus_agility" type="INT"/>
+      <column name="bonus_intelligence" type="INT"/>
+      <column name="description" type="TEXT"/>
+    </createTable>
+  </changeSet>
+
+</databaseChangeLog>

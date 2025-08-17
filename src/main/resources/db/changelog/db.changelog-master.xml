@@ -6,4 +6,5 @@
 
   <include file="/db/changelog/changelog-1-init.xml"/>
   <include file="/db/changelog/changelog-2-createHeroAndItemTables.xml"/>
+  <include file="/db/changelog/changelog-3-createMatchTables.xml"/>
 </databaseChangeLog>

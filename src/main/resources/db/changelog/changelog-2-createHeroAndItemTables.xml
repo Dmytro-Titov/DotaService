@@ -7,7 +7,7 @@
        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
   <changeSet id="1" author="dmytro">
-    <createTable tableName="heros">
+    <createTable tableName="heroes">
       <column name="id" type="BIGINT" autoIncrement="true">
         <constraints primaryKey="true" nullable="false"/>
       </column>

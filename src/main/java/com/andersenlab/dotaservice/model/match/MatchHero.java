@@ -1,16 +1,28 @@
 package com.andersenlab.dotaservice.model.match;
 
+
 import com.andersenlab.dotaservice.model.Hero;
 import com.andersenlab.dotaservice.model.Item;
-import jakarta.persistence.*;
+import com.andersenlab.dotaservice.model.MainAttribute;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "match_heroes")
 public class MatchHero {
 
@@ -46,22 +58,19 @@ public class MatchHero {
   }
 
   public int getTotalStrength() {
-    int base = hero.getMainAttribute() == com.andersenlab.dotaservice.model.MainAttribute.STRENGTH
-        ? hero.getBaseHealth() : 0;
+    int base = hero.getMainAttribute() == MainAttribute.STRENGTH ? hero.getBaseHealth() : 0;
     int bonus = items.stream().mapToInt(Item::getBonusStrength).sum();
     return base + bonus;
   }
 
   public int getTotalAgility() {
-    int base = hero.getMainAttribute() == com.andersenlab.dotaservice.model.MainAttribute.AGILITY
-        ? hero.getBaseHealth() : 0;
+    int base = hero.getMainAttribute() == MainAttribute.AGILITY ? hero.getBaseHealth() : 0;
     int bonus = items.stream().mapToInt(Item::getBonusAgility).sum();
     return base + bonus;
   }
 
   public int getTotalIntelligence() {
-    int base = hero.getMainAttribute() == com.andersenlab.dotaservice.model.MainAttribute.INTELLIGENCE
-        ? hero.getBaseHealth() : 0;
+    int base = hero.getMainAttribute() == MainAttribute.INTELLIGENCE ? hero.getBaseHealth() : 0;
     int bonus = items.stream().mapToInt(Item::getBonusIntelligence).sum();
     return base + bonus;
   }

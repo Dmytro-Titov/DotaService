@@ -30,4 +30,8 @@ public class Hero {
   private int baseMana;
   private int baseHealth;
   private String ultimateAbilityName;
+
+  public Hero(long id) {
+    this.id = id;
+  }
 }

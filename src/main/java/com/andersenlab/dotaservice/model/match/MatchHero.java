@@ -46,10 +46,12 @@ public class MatchHero {
   @JoinColumn(name = "current_match_id", nullable = false)
   private CurrentMatch currentMatch;
 
+  public MatchHero(Hero hero, List<Item> items) {
+    this.hero = hero;
+    this.items = items;
+  }
+
   public void addItem(Item item) {
-    if (items.size() >= 6) {
-      throw new IllegalStateException("Cannot add more than 6 items to a hero");
-    }
     items.add(item);
   }
 
@@ -57,20 +59,15 @@ public class MatchHero {
     items.remove(item);
   }
 
+
   public int getTotalStrength() {
     int base = hero.getMainAttribute() == MainAttribute.STRENGTH ? hero.getBaseHealth() : 0;
     int bonus = items.stream().mapToInt(Item::getBonusStrength).sum();
     return base + bonus;
   }
 
-  public int getTotalAgility() {
-    int base = hero.getMainAttribute() == MainAttribute.AGILITY ? hero.getBaseHealth() : 0;
-    int bonus = items.stream().mapToInt(Item::getBonusAgility).sum();
-    return base + bonus;
-  }
-
   public int getTotalIntelligence() {
-    int base = hero.getMainAttribute() == MainAttribute.INTELLIGENCE ? hero.getBaseHealth() : 0;
+    int base = hero.getMainAttribute() == MainAttribute.INTELLIGENCE ? hero.getBaseMana() : 0;
     int bonus = items.stream().mapToInt(Item::getBonusIntelligence).sum();
     return base + bonus;
   }

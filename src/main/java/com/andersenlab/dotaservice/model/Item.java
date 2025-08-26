@@ -26,4 +26,8 @@ public class Item {
   private int bonusAgility;
   private int bonusIntelligence;
   private String description;
+
+  public Item(long id) {
+    this.id = id;
+  }
 }

@@ -33,18 +33,15 @@ public class DictionaryDataInitializer implements CommandLineRunner {
   }
 
   private <T> void loadData(String path, TypeReference<List<T>> type, JpaRepository<T, Long> repository,
-      ObjectMapper mapper)
-      throws IOException {
-    if (repository.count() > 0) {
-      repository.deleteAll();
-    }
+      ObjectMapper mapper) throws IOException {
+    if (repository.count() == 0) {
+      InputStream input = getClass().getClassLoader().getResourceAsStream(path);
+      if (input == null) {
+        throw new RuntimeException("File %s not found in resources/dictionaryData".formatted(path));
+      }
 
-    InputStream input = getClass().getClassLoader().getResourceAsStream(path);
-    if (input == null) {
-      throw new RuntimeException("File %s not found in resources/dictionaryData".formatted(path));
+      List<T> data = mapper.readValue(input, type);
+      repository.saveAll(data);
     }
-
-    List<T> data = mapper.readValue(input, type);
-    repository.saveAll(data);
   }
 }

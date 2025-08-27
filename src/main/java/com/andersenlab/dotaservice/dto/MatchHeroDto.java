@@ -2,7 +2,6 @@ package com.andersenlab.dotaservice.dto;
 
 import com.andersenlab.dotaservice.model.MainAttribute;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.Builder;
 import lombok.Getter;

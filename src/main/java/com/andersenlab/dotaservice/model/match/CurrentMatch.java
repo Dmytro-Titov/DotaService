@@ -28,13 +28,4 @@ public class CurrentMatch {
   @OneToMany(mappedBy = "currentMatch", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<MatchHero> matchHeroes = new ArrayList<>();
 
-  public void addMatchHero(MatchHero matchHero) {
-    matchHero.setCurrentMatch(this);
-    matchHeroes.add(matchHero);
-  }
-
-  public void removeMatchHero(MatchHero matchHero) {
-    matchHeroes.remove(matchHero);
-    matchHero.setCurrentMatch(null);
-  }
 }

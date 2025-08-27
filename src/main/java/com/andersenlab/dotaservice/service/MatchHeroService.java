@@ -47,7 +47,7 @@ public class MatchHeroService {
     if (currentMatchRepository.existsById(matchId)) {
       currentMatchRepository.deleteById(matchId);
     } else {
-      new ResponseStatusException(HttpStatus.NOT_FOUND, MATCH_NOT_FOUNT_ERROR + matchId);
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, MATCH_NOT_FOUNT_ERROR + matchId);
     }
   }
 

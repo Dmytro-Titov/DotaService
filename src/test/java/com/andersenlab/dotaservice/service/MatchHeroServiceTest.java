@@ -198,11 +198,16 @@ public class MatchHeroServiceTest {
   }
 
   @Test
-  void deleteMatch_ShouldNotDelete_WhenNotExists() {
+  void deleteMatch_ShouldThrowException_WhenNotExists() {
     when(currentMatchRepository.existsById(1L)).thenReturn(false);
 
-    matchHeroService.deleteMatch(1L);
+    ResponseStatusException exception = assertThrows(ResponseStatusException.class,
+        () -> matchHeroService.deleteMatch(1L));
+
+    assertEquals(404, exception.getStatusCode().value());
+    assertTrue(exception.getReason().contains("1"));
 
     verify(currentMatchRepository, never()).deleteById(1L);
   }
+
 }
